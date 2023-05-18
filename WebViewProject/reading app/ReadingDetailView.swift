@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ReadingDetailView: View {
     
-    let url: URL
+    let readingData: ReadingData
     @ObservedObject var readingViewModel: ReadingListViewModel
     
     @State private var showConfirmationDialog: Bool = false
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        LoadingWebView(url: url)
+        LoadingWebView(url: readingData.url)
+            .edgesIgnoringSafeArea(.bottom)
         #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(readingData.title)
         #endif
             .toolbar {
                 Button(role: .destructive) {
@@ -34,16 +36,17 @@ struct ReadingDetailView: View {
                                 titleVisibility: .visible) {
                 Button("Delete", role: .destructive) {
                     dismiss()
-                    readingViewModel.remove(url)
+                    readingViewModel.remove(readingData)
                 }
             }
+           
     }
 }
 
 struct ReadingDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ReadingDetailView(url: URL(string: "https://www.swiftyplace.com")!,
+            ReadingDetailView(readingData: ReadingData.example(),
                               readingViewModel: ReadingListViewModel())
         }
     }

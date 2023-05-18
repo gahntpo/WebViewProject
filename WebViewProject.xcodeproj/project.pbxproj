@@ -21,6 +21,9 @@
 		178E40292A13B3F2007EE213 /* swiftui_webview_loading_indicator_error.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 178E40282A13B3F2007EE213 /* swiftui_webview_loading_indicator_error.jpg */; };
 		178E402B2A13B3FC007EE213 /* swiftui_webview_browser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 178E402A2A13B3FC007EE213 /* swiftui_webview_browser.jpg */; };
 		178E402D2A13B405007EE213 /* swiftui_webview_macos_sheet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 178E402C2A13B405007EE213 /* swiftui_webview_macos_sheet.jpg */; };
+		178E402F2A14C9C6007EE213 /* ReadingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E402E2A14C9C6007EE213 /* ReadingData.swift */; };
+		178E40322A14CBC8007EE213 /* ReadingDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E40312A14CBC8007EE213 /* ReadingDataRow.swift */; };
+		178E40342A14D14C007EE213 /* ReadingDataEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E40332A14D14C007EE213 /* ReadingDataEditorView.swift */; };
 		17B4E0322A12862400E6DB25 /* WebViewProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4E0312A12862400E6DB25 /* WebViewProjectApp.swift */; };
 		17B4E0342A12862400E6DB25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4E0332A12862400E6DB25 /* ContentView.swift */; };
 		17B4E0362A12862600E6DB25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17B4E0352A12862600E6DB25 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 		178E40282A13B3F2007EE213 /* swiftui_webview_loading_indicator_error.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swiftui_webview_loading_indicator_error.jpg; sourceTree = "<group>"; };
 		178E402A2A13B3FC007EE213 /* swiftui_webview_browser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swiftui_webview_browser.jpg; sourceTree = "<group>"; };
 		178E402C2A13B405007EE213 /* swiftui_webview_macos_sheet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swiftui_webview_macos_sheet.jpg; sourceTree = "<group>"; };
+		178E402E2A14C9C6007EE213 /* ReadingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingData.swift; sourceTree = "<group>"; };
+		178E40312A14CBC8007EE213 /* ReadingDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingDataRow.swift; sourceTree = "<group>"; };
+		178E40332A14D14C007EE213 /* ReadingDataEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingDataEditorView.swift; sourceTree = "<group>"; };
 		17B4E02E2A12862400E6DB25 /* WebViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B4E0312A12862400E6DB25 /* WebViewProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewProjectApp.swift; sourceTree = "<group>"; };
 		17B4E0332A12862400E6DB25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,9 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				178E40132A1292F9007EE213 /* SheetWebView.swift */,
-				178E40152A129359007EE213 /* ReadingListView.swift */,
-				178E40212A135EB3007EE213 /* ReadingListViewModel.swift */,
-				178E40232A136178007EE213 /* ReadingDetailView.swift */,
 			);
 			path = "webview examples";
 			sourceTree = "<group>";
@@ -113,6 +116,19 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		178E40302A14C9CB007EE213 /* reading app */ = {
+			isa = PBXGroup;
+			children = (
+				178E40152A129359007EE213 /* ReadingListView.swift */,
+				178E40312A14CBC8007EE213 /* ReadingDataRow.swift */,
+				178E40332A14D14C007EE213 /* ReadingDataEditorView.swift */,
+				178E40232A136178007EE213 /* ReadingDetailView.swift */,
+				178E40212A135EB3007EE213 /* ReadingListViewModel.swift */,
+				178E402E2A14C9C6007EE213 /* ReadingData.swift */,
+			);
+			path = "reading app";
+			sourceTree = "<group>";
+		};
 		17B4E0252A12862400E6DB25 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +154,7 @@
 				178E401F2A135B5A007EE213 /* open in safari */,
 				178E40202A135B63007EE213 /* web view */,
 				178E401E2A135B49007EE213 /* webview examples */,
+				178E40302A14C9CB007EE213 /* reading app */,
 				178E40192A1357DE007EE213 /* in app browser */,
 				17B4E0352A12862600E6DB25 /* Assets.xcassets */,
 				17B4E0372A12862600E6DB25 /* WebViewProject.entitlements */,
@@ -231,12 +248,15 @@
 				178E401B2A1357F8007EE213 /* BrowserViewModel.swift in Sources */,
 				178E40262A1369D2007EE213 /* PlatformIndependentWebView.swift in Sources */,
 				17B4E0342A12862400E6DB25 /* ContentView.swift in Sources */,
+				178E40342A14D14C007EE213 /* ReadingDataEditorView.swift in Sources */,
 				178E40242A136178007EE213 /* ReadingDetailView.swift in Sources */,
 				178E40182A135663007EE213 /* BrowserView.swift in Sources */,
 				178E40102A12904D007EE213 /* AdvancedWebView.swift in Sources */,
 				178E40162A129359007EE213 /* ReadingListView.swift in Sources */,
 				178E40142A1292F9007EE213 /* SheetWebView.swift in Sources */,
 				178E40222A135EB3007EE213 /* ReadingListViewModel.swift in Sources */,
+				178E402F2A14C9C6007EE213 /* ReadingData.swift in Sources */,
+				178E40322A14CBC8007EE213 /* ReadingDataRow.swift in Sources */,
 				178E400E2A128CF9007EE213 /* SimpleWebView.swift in Sources */,
 				17B4E0322A12862400E6DB25 /* WebViewProjectApp.swift in Sources */,
 				17B4E0412A1289B400E6DB25 /* LinkExampleView.swift in Sources */,

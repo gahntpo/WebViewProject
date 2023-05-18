@@ -21,7 +21,7 @@ struct LoadingWebView: View {
                 PlatformIndependentWebView(url: url,
                                            isLoading: $isLoading,
                                            error: $error)
-                .edgesIgnoringSafeArea(.all)
+    
                 if isLoading {
                     ProgressView()
                         .scaleEffect(2)

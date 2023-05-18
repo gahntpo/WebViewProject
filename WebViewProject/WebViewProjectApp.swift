@@ -11,7 +11,7 @@ import SwiftUI
 struct WebViewProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            BrowserView()
+            ReadingListView()
         }
     }
 }
